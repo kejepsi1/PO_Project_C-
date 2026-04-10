@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/PO_Projekt.dir/Antylopa.cpp.o.d"
   "CMakeFiles/PO_Projekt.dir/Czlowiek.cpp.o"
   "CMakeFiles/PO_Projekt.dir/Czlowiek.cpp.o.d"
+  "CMakeFiles/PO_Projekt.dir/Guarana.cpp.o"
+  "CMakeFiles/PO_Projekt.dir/Guarana.cpp.o.d"
   "CMakeFiles/PO_Projekt.dir/Lis.cpp.o"
   "CMakeFiles/PO_Projekt.dir/Lis.cpp.o.d"
   "CMakeFiles/PO_Projekt.dir/Mlecz.cpp.o"

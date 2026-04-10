@@ -177,6 +177,30 @@ Czlowiek.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/Czlowiek.cpp.s
 .PHONY : Czlowiek.cpp.s
 
+Guarana.o: Guarana.cpp.o
+.PHONY : Guarana.o
+
+# target to build an object file
+Guarana.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/Guarana.cpp.o
+.PHONY : Guarana.cpp.o
+
+Guarana.i: Guarana.cpp.i
+.PHONY : Guarana.i
+
+# target to preprocess a source file
+Guarana.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/Guarana.cpp.i
+.PHONY : Guarana.cpp.i
+
+Guarana.s: Guarana.cpp.s
+.PHONY : Guarana.s
+
+# target to generate assembly for a file
+Guarana.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/Guarana.cpp.s
+.PHONY : Guarana.cpp.s
+
 Lis.o: Lis.cpp.o
 .PHONY : Lis.o
 
@@ -456,6 +480,9 @@ help:
 	@echo "... Czlowiek.o"
 	@echo "... Czlowiek.i"
 	@echo "... Czlowiek.s"
+	@echo "... Guarana.o"
+	@echo "... Guarana.i"
+	@echo "... Guarana.s"
 	@echo "... Lis.o"
 	@echo "... Lis.i"
 	@echo "... Lis.s"
