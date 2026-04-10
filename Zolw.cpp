@@ -45,10 +45,6 @@ void Zolw::Akcja() {
     }
 }
 
-void Zolw::Kolizja() {
-    swiat->SprawdzajKolizje(this);
-}
-
 bool Zolw::CzyOdpycha(Organizm *napastnik) {
     if (napastnik->GetSila() < 5) {
         napastnik->Cofnij();

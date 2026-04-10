@@ -14,10 +14,6 @@ void Owca::Rysuj() const {
     swiat->NarysujOrganizm(PolozenieX,PolozenieY, ZNAK_OWCY);
 }
 
-void Owca::Kolizja() {
-    swiat->SprawdzajKolizje(this);
-}
-
 bool Owca::CzyObronil(Organizm *napastnik) {
     if (napastnik->GetSila() == this->GetSila()) {
         if (napastnik->GetWiek() > this->GetWiek()) {

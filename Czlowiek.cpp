@@ -40,10 +40,6 @@ void Czlowiek::Akcja() {
     }
 }
 
-void Czlowiek::Kolizja() {
-    swiat->SprawdzajKolizje(this);
-}
-
 bool Czlowiek::CzyObronil(Organizm *napastnik) {
     if (napastnik->GetSila() == this->GetSila()) {
         if (napastnik->GetWiek() > this->GetWiek()) {

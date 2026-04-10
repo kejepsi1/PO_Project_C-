@@ -34,10 +34,6 @@ void Lis::Akcja() {
     }
 }
 
-void Lis::Kolizja() {
-    swiat->SprawdzajKolizje(this);
-}
-
 bool Lis::DobryWech(int x, int y) {
     for (int i=0;i<swiat->organizmy.size();i++) {
         if (x == swiat->organizmy[i]->GetPolozenieX() && y == swiat->organizmy[i]->GetPolozenieY()) {

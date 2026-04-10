@@ -24,7 +24,7 @@ public:
     char GetZnak() const;
     int GetWiek() const;
     virtual void Akcja();
-    virtual void Kolizja() = 0;
+    virtual void Kolizja();
     virtual bool CzyObronil(Organizm* napastnik) = 0;
     virtual ~Organizm();
     virtual bool CzyOdpycha(Organizm* napastnik);

@@ -12,10 +12,6 @@ void Wilk::Rysuj() const {
     swiat->NarysujOrganizm(PolozenieX,PolozenieY, ZNAK_WILKA);
 }
 
-void Wilk::Kolizja() {
-    swiat->SprawdzajKolizje(this);
-}
-
 bool Wilk::CzyObronil(Organizm *napastnik) {
     if (napastnik->GetSila() == this->GetSila()) {
         if (napastnik->GetWiek() > this->GetWiek()) {

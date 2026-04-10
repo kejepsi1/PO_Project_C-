@@ -68,6 +68,10 @@ void Organizm::Akcja() {
     }
 }
 
+void Organizm::Kolizja() {
+    swiat->SprawdzajKolizje(this);
+}
+
 
 void Organizm::Cofnij() {
     PolozenieX=StarePolozenieX;
