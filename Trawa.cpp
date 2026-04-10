@@ -17,7 +17,7 @@ void Trawa::Akcja() {
     if (this->wiek == 0) {
         return;
     }
-    int draw = std::rand() % 4;
+    int draw = std::rand() % 10;
     if (draw==0) {
         int mozliweX[] = {-1,1,0,0};
         int mozliweY[] = {0,0,-1,1};
@@ -35,7 +35,7 @@ void Trawa::Akcja() {
 
         if (bezpieczne.size() > 0) {
             int wybrany = rand() % bezpieczne.size();
-            swiat->DodajOrganizm(new Trawa(0,0,PolozenieX + mozliweX[wybrany],PolozenieY + mozliweY[wybrany],swiat,ZNAK_TRAWY));
+            swiat->DodajOrganizm(new Trawa(0,0,PolozenieX + mozliweX[bezpieczne[wybrany]],PolozenieY + mozliweY[bezpieczne[wybrany]],swiat,ZNAK_TRAWY));
         }
     }
 }

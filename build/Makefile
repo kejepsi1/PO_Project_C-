@@ -201,6 +201,30 @@ Lis.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/Lis.cpp.s
 .PHONY : Lis.cpp.s
 
+Mlecz.o: Mlecz.cpp.o
+.PHONY : Mlecz.o
+
+# target to build an object file
+Mlecz.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/Mlecz.cpp.o
+.PHONY : Mlecz.cpp.o
+
+Mlecz.i: Mlecz.cpp.i
+.PHONY : Mlecz.i
+
+# target to preprocess a source file
+Mlecz.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/Mlecz.cpp.i
+.PHONY : Mlecz.cpp.i
+
+Mlecz.s: Mlecz.cpp.s
+.PHONY : Mlecz.s
+
+# target to generate assembly for a file
+Mlecz.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/Mlecz.cpp.s
+.PHONY : Mlecz.cpp.s
+
 Organizm.o: Organizm.cpp.o
 .PHONY : Organizm.o
 
@@ -435,6 +459,9 @@ help:
 	@echo "... Lis.o"
 	@echo "... Lis.i"
 	@echo "... Lis.s"
+	@echo "... Mlecz.o"
+	@echo "... Mlecz.i"
+	@echo "... Mlecz.s"
 	@echo "... Organizm.o"
 	@echo "... Organizm.i"
 	@echo "... Organizm.s"

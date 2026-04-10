@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/login/CLionProjects/PO_Projekt/Antylopa.cpp" "CMakeFiles/PO_Projekt.dir/Antylopa.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/Antylopa.cpp.o.d"
   "/home/login/CLionProjects/PO_Projekt/Czlowiek.cpp" "CMakeFiles/PO_Projekt.dir/Czlowiek.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/Czlowiek.cpp.o.d"
   "/home/login/CLionProjects/PO_Projekt/Lis.cpp" "CMakeFiles/PO_Projekt.dir/Lis.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/Lis.cpp.o.d"
+  "/home/login/CLionProjects/PO_Projekt/Mlecz.cpp" "CMakeFiles/PO_Projekt.dir/Mlecz.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/Mlecz.cpp.o.d"
   "/home/login/CLionProjects/PO_Projekt/Organizm.cpp" "CMakeFiles/PO_Projekt.dir/Organizm.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/Organizm.cpp.o.d"
   "/home/login/CLionProjects/PO_Projekt/Owca.cpp" "CMakeFiles/PO_Projekt.dir/Owca.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/Owca.cpp.o.d"
   "/home/login/CLionProjects/PO_Projekt/Roslina.cpp" "CMakeFiles/PO_Projekt.dir/Roslina.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/Roslina.cpp.o.d"

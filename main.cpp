@@ -7,6 +7,7 @@
 #include <ncurses.h>
 #include "Zolw.h"
 #include "Antylopa.h"
+#include "Mlecz.h"
 #include "Trawa.h"
 using namespace std;
 
@@ -29,6 +30,7 @@ int main() {
     Organizm* zolw = new Zolw(2,1,3,3,swiat, 'Z');
     Organizm* antylopa = new Antylopa(4,4,5,5,swiat,'A');
     Organizm* trawa = new Trawa(0,0,2,15,swiat,'T');
+    Organizm* mlecz = new Mlecz(0,0,15,1,swiat,'M');
     swiat->DodajOrganizm(czlowiek);
     swiat->DodajOrganizm(wilk);
     swiat->DodajOrganizm(owca);
@@ -36,6 +38,7 @@ int main() {
     swiat->DodajOrganizm(zolw);
     swiat->DodajOrganizm(antylopa);
     swiat->DodajOrganizm(trawa);
+    swiat->DodajOrganizm(mlecz);
     swiat->Graj();
     endwin();
     echo();

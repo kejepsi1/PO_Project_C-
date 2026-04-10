@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/PO_Projekt.dir/Czlowiek.cpp.o.d"
   "CMakeFiles/PO_Projekt.dir/Lis.cpp.o"
   "CMakeFiles/PO_Projekt.dir/Lis.cpp.o.d"
+  "CMakeFiles/PO_Projekt.dir/Mlecz.cpp.o"
+  "CMakeFiles/PO_Projekt.dir/Mlecz.cpp.o.d"
   "CMakeFiles/PO_Projekt.dir/Organizm.cpp.o"
   "CMakeFiles/PO_Projekt.dir/Organizm.cpp.o.d"
   "CMakeFiles/PO_Projekt.dir/Owca.cpp.o"
