@@ -13,6 +13,9 @@ void Lis::Rysuj() const {
 }
 
 void Lis::Akcja() {
+    if (this->wiek == 0) {
+        return;
+    }
     int mozliweX[] = {-1,1,0,0};
     int mozliweY[] = {0,0,-1,1};
     vector<int> bezpieczne;

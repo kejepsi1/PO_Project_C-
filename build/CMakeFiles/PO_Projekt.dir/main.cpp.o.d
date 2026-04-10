@@ -165,4 +165,6 @@ CMakeFiles/PO_Projekt.dir/main.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h /usr/include/unctrl.h \
  /usr/include/curses.h /home/login/CLionProjects/PO_Projekt/Zolw.h \
- /home/login/CLionProjects/PO_Projekt/Antylopa.h
+ /home/login/CLionProjects/PO_Projekt/Antylopa.h \
+ /home/login/CLionProjects/PO_Projekt/Trawa.h \
+ /home/login/CLionProjects/PO_Projekt/Roslina.h

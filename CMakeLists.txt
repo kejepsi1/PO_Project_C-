@@ -25,7 +25,9 @@ add_executable(PO_Projekt main.cpp
         Antylopa.cpp
         Antylopa.h
         Trawa.cpp
-        Trawa.h)
+        Trawa.h
+        Mlecz.cpp
+        Mlecz.h)
 
 target_include_directories(PO_Projekt PRIVATE ${CURSES_INCLUDE_DIRS})
 

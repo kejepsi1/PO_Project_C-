@@ -14,6 +14,9 @@ void Zolw::Rysuj() const {
 }
 
 void Zolw::Akcja() {
+    if (this->wiek == 0) {
+        return;
+    }
     int noweX = PolozenieX;
     int noweY = PolozenieY;
     int ruch = rand() % 4;

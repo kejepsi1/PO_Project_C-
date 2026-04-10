@@ -86,6 +86,7 @@ void Swiat::WykonajTure() {
     for (int i=0;i<organizmy.size();i++) {
         organizmy[i]->Akcja();
         organizmy[i]->Kolizja();
+        DodajWiek();
     }
 }
 

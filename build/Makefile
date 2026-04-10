@@ -297,6 +297,30 @@ Swiat.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/Swiat.cpp.s
 .PHONY : Swiat.cpp.s
 
+Trawa.o: Trawa.cpp.o
+.PHONY : Trawa.o
+
+# target to build an object file
+Trawa.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/Trawa.cpp.o
+.PHONY : Trawa.cpp.o
+
+Trawa.i: Trawa.cpp.i
+.PHONY : Trawa.i
+
+# target to preprocess a source file
+Trawa.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/Trawa.cpp.i
+.PHONY : Trawa.cpp.i
+
+Trawa.s: Trawa.cpp.s
+.PHONY : Trawa.s
+
+# target to generate assembly for a file
+Trawa.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/Trawa.cpp.s
+.PHONY : Trawa.cpp.s
+
 Wilk.o: Wilk.cpp.o
 .PHONY : Wilk.o
 
@@ -423,6 +447,9 @@ help:
 	@echo "... Swiat.o"
 	@echo "... Swiat.i"
 	@echo "... Swiat.s"
+	@echo "... Trawa.o"
+	@echo "... Trawa.i"
+	@echo "... Trawa.s"
 	@echo "... Wilk.o"
 	@echo "... Wilk.i"
 	@echo "... Wilk.s"

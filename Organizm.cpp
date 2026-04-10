@@ -43,6 +43,9 @@ bool Organizm::CzyOdpycha(Organizm *napastnik) {
 }
 
 void Organizm::Akcja() {
+    if (this->wiek == 0) {
+        return;
+    }
     int noweX = PolozenieX;
     int noweY = PolozenieY;
     int ruch = rand() % 4;

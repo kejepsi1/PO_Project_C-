@@ -7,6 +7,10 @@ class Trawa  : public Roslina{
 public:
     Trawa(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat* swiat, char znak);
     void Rysuj() const override;
+    void Akcja() override;
+    bool SprawdzajSasiadow(int x, int y);
+    bool CzyObronil(Organizm *napastnik) override;
+
 
 };
 
