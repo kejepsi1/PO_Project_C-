@@ -5,7 +5,7 @@
 #include <vector>
 #define ZNAK_GUARANY 'G'
 
-Guarana::Guarana(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat *swiat, char znak) :
+Guarana::Guarana(int PolozenieX, int PolozenieY, Swiat *swiat, char znak) :
 Roslina(0,0,PolozenieX, PolozenieY, swiat, ZNAK_GUARANY)
 {}
 
@@ -35,7 +35,7 @@ void Guarana::Akcja() {
 
         if (bezpieczne.size() > 0) {
             int wybrany = rand() % bezpieczne.size();
-            swiat->DodajOrganizm(new Guarana(0,0,PolozenieX + mozliweX[bezpieczne[wybrany]],PolozenieY + mozliweY[bezpieczne[wybrany]],swiat,ZNAK_GUARANY));
+            swiat->DodajOrganizm(new Guarana(PolozenieX + mozliweX[bezpieczne[wybrany]],PolozenieY + mozliweY[bezpieczne[wybrany]],swiat,ZNAK_GUARANY));
         }
     }
 }
@@ -66,5 +66,5 @@ bool Guarana::CzyObronil(Organizm *napastnik) {
 }
 
 void Guarana::Kolizja() {
-    swiat->
+    swiat->SprawdzajKolizje(this);
 }

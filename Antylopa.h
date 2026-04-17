@@ -5,12 +5,13 @@
 
 class Antylopa : public Zwierze{
 public:
-    Antylopa(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat* swiat, char znak);
+    Antylopa(int PolozenieX, int PolozenieY, Swiat* swiat, char znak);
     void Rysuj() const override;
     void Akcja() override;
     void Kolizja() override;
     bool CzyObronil(Organizm *napastnik) override;
     bool CzyOdpycha(Organizm *napastnik) override;
+    Organizm* Rozmnazaj(int x, int y) override;
 };
 
 

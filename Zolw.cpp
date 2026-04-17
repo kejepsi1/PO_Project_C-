@@ -5,7 +5,7 @@
 #define ZNAK_ZOLWIA 'Z'
 using namespace std;
 
-Zolw::Zolw(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat* swiat, char znak) :
+Zolw::Zolw(int PolozenieX, int PolozenieY, Swiat* swiat, char znak) :
 Zwierze(2,1,PolozenieX,PolozenieY, swiat, ZNAK_ZOLWIA)
 {}
 
@@ -67,4 +67,8 @@ bool Zolw::CzyObronil(Organizm *napastnik) {
         return false;
     }
     return true;
+}
+
+Organizm* Zolw::Rozmnazaj(int x,int y) {
+    return new Zolw(x,y,swiat,ZNAK_ZOLWIA);
 }

@@ -5,12 +5,12 @@
 
 class Lis : public Zwierze {
 public:
-    Lis(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat* swiat, char znak);
+    Lis(int PolozenieX, int PolozenieY, Swiat* swiat, char znak);
     void Rysuj() const override;
     void Akcja() override;
     bool DobryWech(int x, int y);
     bool CzyObronil(Organizm *napastnik) override;
-
+    Organizm* Rozmnazaj(int x, int y) override;
 };
 
 

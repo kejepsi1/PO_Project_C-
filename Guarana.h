@@ -5,7 +5,7 @@
 
 class Guarana  : public Roslina{
 public:
-    Guarana(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat* swiat, char znak);
+    Guarana(int PolozenieX, int PolozenieY, Swiat* swiat, char znak);
     void Rysuj() const override;
     void Akcja() override;
     bool SprawdzajSasiadow(int x, int y);

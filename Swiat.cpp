@@ -97,6 +97,11 @@ void Swiat::SprawdzajKolizje(Organizm* napastnik) {
             continue;
         }
         if (obronca->GetPolozenieX() == napastnik->GetPolozenieX() && obronca->GetPolozenieY() == napastnik->GetPolozenieY()){
+            if (obronca->GetZnak() == napastnik->GetZnak()) {
+                napastnik->Cofnij();
+                obronca->RozmnozSie();
+                return;
+            }
             if (organizmy[i]->CzyOdpycha(napastnik) == false) {
                 if (organizmy[i]->CzyObronil(napastnik) == false) {
                     delete obronca;

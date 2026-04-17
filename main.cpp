@@ -1,4 +1,5 @@
 #include <iostream>
+#include <time.h>
 #include "Swiat.h"
 #include "Czlowiek.h"
 #include "Wilk.h"
@@ -23,25 +24,22 @@ int main() {
     curs_set(0);
     noecho();
     cbreak();
+    srand(time(NULL));
     Swiat* swiat = new Swiat(x,y);
-    Organizm* czlowiek = new Czlowiek(5,4,5,5, swiat, 'C');
-    Organizm* wilk = new Wilk(9,5,3,3, swiat, 'W');
-    Organizm* owca = new Owca(4,4,10,10,swiat, 'O');
-    Organizm* lis = new Lis(3,7,4,4,swiat,'L');
-    Organizm* zolw = new Zolw(2,1,3,3,swiat, 'Z');
-    Organizm* antylopa = new Antylopa(4,4,5,5,swiat,'A');
-    Organizm* trawa = new Trawa(0,0,2,15,swiat,'T');
-    Organizm* mlecz = new Mlecz(0,0,15,1,swiat,'M');
-    Organizm* guarana = new Guarana(0,0,10,14,swiat,'G');
-    swiat->DodajOrganizm(czlowiek);
-    swiat->DodajOrganizm(wilk);
-    swiat->DodajOrganizm(owca);
-    swiat->DodajOrganizm(lis);
-    swiat->DodajOrganizm(zolw);
-    swiat->DodajOrganizm(antylopa);
-    swiat->DodajOrganizm(trawa);
-    swiat->DodajOrganizm(mlecz);
-    swiat->DodajOrganizm(guarana);
+    swiat->DodajOrganizm(new Czlowiek(5, 4, rand() % x, rand() % y, swiat, 'C'));
+    int ilosc_zwierzat = 3;
+
+    for (int i = 0; i < ilosc_zwierzat; i++) {
+        swiat->DodajOrganizm(new Wilk(rand() % x, rand() % y, swiat, 'W'));
+        swiat->DodajOrganizm(new Owca(rand() % x, rand() % y, swiat, 'O'));
+        swiat->DodajOrganizm(new Lis(rand() % x, rand() % y, swiat, 'L'));
+        swiat->DodajOrganizm(new Zolw(rand() % x, rand() % y, swiat, 'Z'));
+        swiat->DodajOrganizm(new Antylopa(rand() % x, rand() % y, swiat, 'A'));
+
+        swiat->DodajOrganizm(new Trawa(0, 0, rand() % x, rand() % y, swiat, 'T'));
+        swiat->DodajOrganizm(new Mlecz(0, 0, rand() % x, rand() % y, swiat, 'M'));
+        swiat->DodajOrganizm(new Guarana(0, 0, rand() % x, rand() % y, swiat, 'G'));
+    }
     swiat->Graj();
     endwin();
     echo();

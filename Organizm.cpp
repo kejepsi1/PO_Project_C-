@@ -81,4 +81,12 @@ void Organizm::Cofnij() {
     PolozenieY=StarePolozenieY;
 }
 
+Organizm* Organizm::Rozmnazaj(int x, int y) {
+    return nullptr;
+}
+
+void Organizm::RozmnozSie() {
+}
+
 Organizm::~Organizm() = default;
+

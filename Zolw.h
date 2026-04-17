@@ -5,11 +5,12 @@
 
 class Zolw : public Zwierze{
 public:
-    Zolw(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat* swiat, char znak);
+    Zolw(int PolozenieX, int PolozenieY, Swiat* swiat, char znak);
     void Rysuj() const override;
     void Akcja() override;
     bool CzyObronil(Organizm *napastnik) override;
     bool CzyOdpycha(Organizm *napastnik) override;
+    Organizm* Rozmnazaj(int x, int y) override;
 };
 
 

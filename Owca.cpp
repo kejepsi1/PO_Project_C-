@@ -6,7 +6,7 @@
 #define ZNAK_OWCY 'O'
 using namespace std;
 
-Owca::Owca(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat* swiat, char znak) :
+Owca::Owca(int PolozenieX, int PolozenieY, Swiat* swiat, char znak) :
 Zwierze(4,4,PolozenieX,PolozenieY, swiat, ZNAK_OWCY)
 {}
 
@@ -28,4 +28,8 @@ bool Owca::CzyObronil(Organizm *napastnik) {
     }
     return true;
 
+}
+
+Organizm *Owca::Rozmnazaj(int x, int y) {
+    return new Owca(x,y,swiat,ZNAK_OWCY);
 }

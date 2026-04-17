@@ -5,7 +5,7 @@
 #include <vector>
 #define ZNAK_MLECZA 'M'
 
-Mlecz::Mlecz(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat *swiat, char znak) :
+Mlecz::Mlecz(int PolozenieX, int PolozenieY, Swiat *swiat, char znak) :
 Roslina(0,0,PolozenieX, PolozenieY, swiat, ZNAK_MLECZA)
 {}
 
@@ -37,7 +37,7 @@ void Mlecz::Akcja() {
 
             if (bezpieczne.size() > 0) {
                 int wybrany = rand() % bezpieczne.size();
-                swiat->DodajOrganizm(new Mlecz(0,0,PolozenieX + mozliweX[bezpieczne[wybrany]],PolozenieY + mozliweY[bezpieczne[wybrany]],swiat,ZNAK_MLECZA));
+                swiat->DodajOrganizm(new Mlecz(PolozenieX + mozliweX[bezpieczne[wybrany]],PolozenieY + mozliweY[bezpieczne[wybrany]],swiat,ZNAK_MLECZA));
             }
         }
     }

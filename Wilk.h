@@ -6,9 +6,10 @@
 
 class Wilk : public Zwierze {
 public:
-    Wilk(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat* swiat, char znak);
+    Wilk(int PolozenieX, int PolozenieY, Swiat* swiat, char znak);
     void Rysuj() const override;
     bool CzyObronil(Organizm *napastnik) override;
+    Organizm* Rozmnazaj(int x, int y) override;
 };
 
 

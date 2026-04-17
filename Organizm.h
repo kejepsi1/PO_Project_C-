@@ -29,6 +29,8 @@ public:
     virtual ~Organizm();
     virtual bool CzyOdpycha(Organizm* napastnik);
     virtual void Cofnij();
+    virtual Organizm* Rozmnazaj(int x,int y);
+    virtual void RozmnozSie();
 };
 
 

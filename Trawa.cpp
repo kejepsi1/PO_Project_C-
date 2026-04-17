@@ -5,7 +5,7 @@
 #include <vector>
 #define ZNAK_TRAWY 'T'
 
-Trawa::Trawa(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat *swiat, char znak) :
+Trawa::Trawa(int PolozenieX, int PolozenieY, Swiat *swiat, char znak) :
 Roslina(0,0,PolozenieX, PolozenieY, swiat, ZNAK_TRAWY)
 {}
 
@@ -35,7 +35,7 @@ void Trawa::Akcja() {
 
         if (bezpieczne.size() > 0) {
             int wybrany = rand() % bezpieczne.size();
-            swiat->DodajOrganizm(new Trawa(0,0,PolozenieX + mozliweX[bezpieczne[wybrany]],PolozenieY + mozliweY[bezpieczne[wybrany]],swiat,ZNAK_TRAWY));
+            swiat->DodajOrganizm(new Trawa(PolozenieX + mozliweX[bezpieczne[wybrany]],PolozenieY + mozliweY[bezpieczne[wybrany]],swiat,ZNAK_TRAWY));
         }
     }
 }

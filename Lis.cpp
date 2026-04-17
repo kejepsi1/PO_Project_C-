@@ -4,7 +4,7 @@
 #define ZNAK_LISA 'L'
 using namespace std;
 
-Lis::Lis(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat* swiat, char znak) :
+Lis::Lis(int PolozenieX, int PolozenieY, Swiat* swiat, char znak) :
 Zwierze(3,7,PolozenieX,PolozenieY, swiat, ZNAK_LISA)
 {}
 
@@ -62,4 +62,8 @@ bool Lis::CzyObronil(Organizm *napastnik) {
     }
     return true;
 
+}
+
+Organizm *Lis::Rozmnazaj(int x, int y) {
+    return new Lis(x,y,swiat,ZNAK_LISA);
 }
