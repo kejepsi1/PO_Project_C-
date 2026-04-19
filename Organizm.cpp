@@ -48,7 +48,7 @@ void Organizm::Akcja() {
     }
     int noweX = PolozenieX;
     int noweY = PolozenieY;
-    int ruch = rand() % 4;
+    int ruch = rand() % 8;
     switch (ruch) {
         case 0:
             noweX+=1;
@@ -61,6 +61,22 @@ void Organizm::Akcja() {
             break;
         case 3:
             noweY-=1;
+            break;
+        case 4:
+            noweY-=1;
+            noweX-=1;
+            break;
+        case 5:
+            noweY-=1;
+            noweX+=1;
+            break;
+        case 6:
+            noweY+=1;
+            noweX-=1;
+            break;
+        case 7:
+            noweY+=1;
+            noweX+=1;
             break;
     }
     if (noweX >= 0 && noweX < swiat->GetX() && noweY >=0 && noweY < swiat->GetY()) {
@@ -86,6 +102,22 @@ Organizm* Organizm::Rozmnazaj(int x, int y) {
 }
 
 void Organizm::RozmnozSie() {
+}
+
+void Organizm::SetWiek(int x) {
+    this->wiek = x;
+}
+
+void Organizm::SetSila(int x) {
+    this->sila = x;
+}
+
+bool Organizm::CzyZyje() const {
+    return czyZyje;
+}
+
+void Organizm::Zabij() {
+    czyZyje = false;
 }
 
 Organizm::~Organizm() = default;

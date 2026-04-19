@@ -30,11 +30,27 @@ void Czlowiek::Akcja() {
         case KEY_RIGHT:
             noweX+=1;
             break;
+        case 'w':
+            noweX-=1;
+            noweY-=1;
+            break;
+        case 'r':
+            noweX+=1;
+            noweY-=1;
+            break;
+        case 'x':
+            noweX-=1;
+            noweY+=1;
+            break;
+        case 'v':
+            noweX+=1;
+            noweY+=1;
+            break;
         case 'q':
             endwin();
             exit(0);
     }
-    if (noweX >= 0 && noweX < swiat->GetX() && noweY >=0 & noweY < swiat->GetY()) {
+    if (noweX >= 0 && noweX < swiat->GetX() && noweY >=0 && noweY < swiat->GetY()) {
         PolozenieX=noweX;
         PolozenieY=noweY;
     }

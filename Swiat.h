@@ -6,7 +6,6 @@
 class Swiat {
 private:
     int x,y;
-    std::vector<std::vector<char>> plansza;
 public:
     std::vector<Organizm*> organizmy;
     Swiat(int x, int y);

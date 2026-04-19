@@ -69,10 +69,10 @@ bool Antylopa::CzyOdpycha(Organizm *napastnik) {
     if (losuj==0) {
         return false;
     }
-    int mozliweX[] = {-1,1,0,0};
-    int mozliweY[] = {0,0,-1,1};
-    vector<int> bezpieczne;
-    for (int j=0;j<4;j++) {
+    int mozliweX[] = {-1,1,0,0,-1,-1,1,1};
+    int mozliweY[] = {0,0,-1,1,-1,1,-1,1};
+    std::vector<int> bezpieczne;
+    for (int j=0;j < 8;j++) {
         int potencjalneX = PolozenieX + mozliweX[j];
         int potencjalneY = PolozenieY + mozliweY[j];
         bool found = false;

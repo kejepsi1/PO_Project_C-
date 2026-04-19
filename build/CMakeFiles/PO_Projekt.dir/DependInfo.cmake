@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/login/CLionProjects/PO_Projekt/Antylopa.cpp" "CMakeFiles/PO_Projekt.dir/Antylopa.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/Antylopa.cpp.o.d"
+  "/home/login/CLionProjects/PO_Projekt/BarszczSosnowskiego.cpp" "CMakeFiles/PO_Projekt.dir/BarszczSosnowskiego.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/BarszczSosnowskiego.cpp.o.d"
   "/home/login/CLionProjects/PO_Projekt/Czlowiek.cpp" "CMakeFiles/PO_Projekt.dir/Czlowiek.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/Czlowiek.cpp.o.d"
   "/home/login/CLionProjects/PO_Projekt/Guarana.cpp" "CMakeFiles/PO_Projekt.dir/Guarana.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/Guarana.cpp.o.d"
   "/home/login/CLionProjects/PO_Projekt/Lis.cpp" "CMakeFiles/PO_Projekt.dir/Lis.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/Lis.cpp.o.d"

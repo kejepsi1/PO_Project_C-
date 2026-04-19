@@ -31,7 +31,9 @@ add_executable(PO_Projekt main.cpp
         Guarana.cpp
         Guarana.h
         WilczeJagody.cpp
-        WilczeJagody.h)
+        WilczeJagody.h
+        BarszczSosnowskiego.cpp
+        BarszczSosnowskiego.h)
 
 target_include_directories(PO_Projekt PRIVATE ${CURSES_INCLUDE_DIRS})
 

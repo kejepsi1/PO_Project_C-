@@ -7,7 +7,7 @@ class Zwierze : public Organizm {
 public:
     Zwierze(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat* swiat, char znak);
     virtual ~Zwierze();
-    void RozmnozSie();
+    void RozmnozSie() override;
 };
 
 

@@ -153,6 +153,30 @@ Antylopa.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/Antylopa.cpp.s
 .PHONY : Antylopa.cpp.s
 
+BarszczSosnowskiego.o: BarszczSosnowskiego.cpp.o
+.PHONY : BarszczSosnowskiego.o
+
+# target to build an object file
+BarszczSosnowskiego.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/BarszczSosnowskiego.cpp.o
+.PHONY : BarszczSosnowskiego.cpp.o
+
+BarszczSosnowskiego.i: BarszczSosnowskiego.cpp.i
+.PHONY : BarszczSosnowskiego.i
+
+# target to preprocess a source file
+BarszczSosnowskiego.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/BarszczSosnowskiego.cpp.i
+.PHONY : BarszczSosnowskiego.cpp.i
+
+BarszczSosnowskiego.s: BarszczSosnowskiego.cpp.s
+.PHONY : BarszczSosnowskiego.s
+
+# target to generate assembly for a file
+BarszczSosnowskiego.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/BarszczSosnowskiego.cpp.s
+.PHONY : BarszczSosnowskiego.cpp.s
+
 Czlowiek.o: Czlowiek.cpp.o
 .PHONY : Czlowiek.o
 
@@ -501,6 +525,9 @@ help:
 	@echo "... Antylopa.o"
 	@echo "... Antylopa.i"
 	@echo "... Antylopa.s"
+	@echo "... BarszczSosnowskiego.o"
+	@echo "... BarszczSosnowskiego.i"
+	@echo "... BarszczSosnowskiego.s"
 	@echo "... Czlowiek.o"
 	@echo "... Czlowiek.i"
 	@echo "... Czlowiek.s"

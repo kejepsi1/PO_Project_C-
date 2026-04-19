@@ -20,10 +20,10 @@ void WilczeJagody::Akcja() {
     }
     int draw = std::rand() % 20;
     if (draw==0) {
-        int mozliweX[] = {-1,1,0,0};
-        int mozliweY[] = {0,0,-1,1};
+        int mozliweX[] = {-1,1,0,0,-1,-1,1,1};
+        int mozliweY[] = {0,0,-1,1,-1,1,-1,1};
         std::vector<int> bezpieczne;
-        for (int i=0;i < 4;i++) {
+        for (int i=0;i < 8;i++) {
             int potencjalneX = PolozenieX + mozliweX[i];
             int potencjalneY = PolozenieY + mozliweY[i];
 
@@ -53,17 +53,8 @@ bool WilczeJagody::SprawdzajSasiadow(int x, int y) {
 }
 
 bool WilczeJagody::CzyObronil(Organizm *napastnik) {
-    if (napastnik->GetSila() == this->GetSila()) {
-        if (napastnik->GetWiek() > this->GetWiek()) {
-            return false;
-        }
-        return true;
-    }
-    if (napastnik->GetSila() > this->GetSila()) {
-        return false;
-    }
-    return true;
-
+    napastnik->Zabij();
+    return false;
 }
 
 void WilczeJagody::Kolizja() {

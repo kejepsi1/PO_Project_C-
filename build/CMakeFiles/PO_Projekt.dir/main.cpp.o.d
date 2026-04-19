@@ -170,4 +170,5 @@ CMakeFiles/PO_Projekt.dir/main.cpp.o: \
  /home/login/CLionProjects/PO_Projekt/Roslina.h \
  /home/login/CLionProjects/PO_Projekt/Mlecz.h \
  /home/login/CLionProjects/PO_Projekt/Trawa.h \
- /home/login/CLionProjects/PO_Projekt/WilczeJagody.h
+ /home/login/CLionProjects/PO_Projekt/WilczeJagody.h \
+ /home/login/CLionProjects/PO_Projekt/BarszczSosnowskiego.h

@@ -10,7 +10,6 @@ using namespace std;
 Swiat::Swiat(int x,int y) {
     this->x=x;
     this->y=y;
-    plansza = vector<vector<char>>(y,vector<char>(x, '#'));
 }
 
 void Swiat::NarysujOrganizm(int PolozenieX, int PolozenieY, char znak) {
@@ -68,7 +67,7 @@ void Swiat::Graj() {
             refresh();
             getch();
             endwin();
-            exit(0);
+            return;
         }
     }
 }
@@ -84,10 +83,20 @@ void Swiat::WykonajTure() {
     RysujSwiat();
 
     for (int i=0;i<organizmy.size();i++) {
-        organizmy[i]->Akcja();
-        organizmy[i]->Kolizja();
-        DodajWiek();
+        if (organizmy[i]->CzyZyje()) {
+            organizmy[i]->Akcja();
+            organizmy[i]->Kolizja();
+        }
     }
+
+    for (int i = 0;i < organizmy.size();i++) {
+        if (!organizmy[i]->CzyZyje()) {
+            delete organizmy[i];
+            organizmy.erase(organizmy.begin() + i);
+            i--;
+        }
+    }
+    DodajWiek();
 }
 
 void Swiat::SprawdzajKolizje(Organizm* napastnik) {
@@ -128,7 +137,7 @@ void Swiat::SprawdzajKolizje(Organizm* napastnik) {
 
 void Swiat::DodajWiek() {
     for (int i=0;i<organizmy.size();i++) {
-        organizmy[i]->wiek+=1;
+        organizmy[i]->SetWiek(organizmy[i]->GetWiek() + 1);
     }
 }
 

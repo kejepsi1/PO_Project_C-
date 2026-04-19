@@ -12,6 +12,7 @@
 #include "Mlecz.h"
 #include "Trawa.h"
 #include "WilczeJagody.h"
+#include "BarszczSosnowskiego.h"
 using namespace std;
 
 int main() {
@@ -41,6 +42,7 @@ int main() {
         swiat->DodajOrganizm(new Mlecz(rand() % x, rand() % y, swiat));
         swiat->DodajOrganizm(new Guarana(rand() % x, rand() % y, swiat));
         swiat->DodajOrganizm(new WilczeJagody(rand() % x, rand() % y, swiat));
+        swiat->DodajOrganizm(new BarszczSosnowskiego(rand() % x, rand() % y, swiat));
     }
     swiat->Graj();
     endwin();

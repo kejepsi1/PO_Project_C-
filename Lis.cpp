@@ -16,10 +16,10 @@ void Lis::Akcja() {
     if (this->wiek == 0) {
         return;
     }
-    int mozliweX[] = {-1,1,0,0};
-    int mozliweY[] = {0,0,-1,1};
-    vector<int> bezpieczne;
-    for (int i=0;i < 4;i++) {
+    int mozliweX[] = {-1,1,0,0,-1,-1,1,1};
+    int mozliweY[] = {0,0,-1,1,-1,1,-1,1};
+    std::vector<int> bezpieczne;
+    for (int i=0;i < 8;i++) {
         int potencjalneX = PolozenieX + mozliweX[i];
         int potencjalneY = PolozenieY + mozliweY[i];
 
@@ -31,9 +31,11 @@ void Lis::Akcja() {
     }
     
     if (bezpieczne.size() > 0) {
+        StarePolozenieX = PolozenieX;
+        StarePolozenieY = PolozenieY;
         int wybrany = rand() % bezpieczne.size();
-        PolozenieX+= mozliweX[wybrany];
-        PolozenieY+= mozliweY[wybrany];
+        PolozenieX+= mozliweX[bezpieczne[wybrany]];
+        PolozenieY+= mozliweY[bezpieczne[wybrany]];
     }
 }
 

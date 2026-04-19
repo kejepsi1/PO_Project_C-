@@ -13,8 +13,9 @@ protected:
     int StarePolozenieY;
     char znak;
     Swiat* swiat;
-public:
     int wiek;
+    bool czyZyje = true;
+public:
     Organizm(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat* swiat, char znak);
     virtual void Rysuj() const = 0;
     int GetSila() const;
@@ -23,6 +24,10 @@ public:
     int GetPolozenieY() const;
     char GetZnak() const;
     int GetWiek() const;
+    void SetWiek(int x);
+    void SetSila(int x);
+    bool CzyZyje() const;
+    void Zabij();
     virtual void Akcja();
     virtual void Kolizja();
     virtual bool CzyObronil(Organizm* napastnik) = 0;

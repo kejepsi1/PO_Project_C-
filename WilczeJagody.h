@@ -1,7 +1,3 @@
-//
-// Created by login on 4/17/26.
-//
-
 #ifndef PO_PROJEKT_WILCZEJAGODY_H
 #define PO_PROJEKT_WILCZEJAGODY_H
 #include "Roslina.h"
