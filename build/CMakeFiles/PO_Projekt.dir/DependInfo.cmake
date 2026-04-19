@@ -18,6 +18,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/login/CLionProjects/PO_Projekt/Roslina.cpp" "CMakeFiles/PO_Projekt.dir/Roslina.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/Roslina.cpp.o.d"
   "/home/login/CLionProjects/PO_Projekt/Swiat.cpp" "CMakeFiles/PO_Projekt.dir/Swiat.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/Swiat.cpp.o.d"
   "/home/login/CLionProjects/PO_Projekt/Trawa.cpp" "CMakeFiles/PO_Projekt.dir/Trawa.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/Trawa.cpp.o.d"
+  "/home/login/CLionProjects/PO_Projekt/WilczeJagody.cpp" "CMakeFiles/PO_Projekt.dir/WilczeJagody.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/WilczeJagody.cpp.o.d"
   "/home/login/CLionProjects/PO_Projekt/Wilk.cpp" "CMakeFiles/PO_Projekt.dir/Wilk.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/Wilk.cpp.o.d"
   "/home/login/CLionProjects/PO_Projekt/Zolw.cpp" "CMakeFiles/PO_Projekt.dir/Zolw.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/Zolw.cpp.o.d"
   "/home/login/CLionProjects/PO_Projekt/Zwierze.cpp" "CMakeFiles/PO_Projekt.dir/Zwierze.cpp.o" "gcc" "CMakeFiles/PO_Projekt.dir/Zwierze.cpp.o.d"

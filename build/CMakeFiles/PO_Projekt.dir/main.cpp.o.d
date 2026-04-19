@@ -148,7 +148,7 @@ CMakeFiles/PO_Projekt.dir/main.cpp.o: \
  /usr/include/c++/13/bits/locale_facets.tcc \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
- /usr/include/c++/13/bits/istream.tcc \
+ /usr/include/c++/13/bits/istream.tcc /usr/include/c++/13/ctime \
  /home/login/CLionProjects/PO_Projekt/Swiat.h /usr/include/c++/13/vector \
  /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
@@ -169,4 +169,5 @@ CMakeFiles/PO_Projekt.dir/main.cpp.o: \
  /home/login/CLionProjects/PO_Projekt/Guarana.h \
  /home/login/CLionProjects/PO_Projekt/Roslina.h \
  /home/login/CLionProjects/PO_Projekt/Mlecz.h \
- /home/login/CLionProjects/PO_Projekt/Trawa.h
+ /home/login/CLionProjects/PO_Projekt/Trawa.h \
+ /home/login/CLionProjects/PO_Projekt/WilczeJagody.h

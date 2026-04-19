@@ -4,7 +4,7 @@
 
 class Czlowiek : public Zwierze {
 public:
-    Czlowiek(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat* swiat, char znak);
+    Czlowiek(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat* swiat);
     void Rysuj() const override;
     void Akcja() override;
     bool CzyObronil(Organizm *napastnik) override;

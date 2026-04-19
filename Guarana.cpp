@@ -5,7 +5,7 @@
 #include <vector>
 #define ZNAK_GUARANY 'G'
 
-Guarana::Guarana(int PolozenieX, int PolozenieY, Swiat *swiat, char znak) :
+Guarana::Guarana(int PolozenieX, int PolozenieY, Swiat *swiat) :
 Roslina(0,0,PolozenieX, PolozenieY, swiat, ZNAK_GUARANY)
 {}
 
@@ -17,7 +17,7 @@ void Guarana::Akcja() {
     if (this->wiek == 0) {
         return;
     }
-    int draw = std::rand() % 10;
+    int draw = std::rand() % 20;
     if (draw==0) {
         int mozliweX[] = {-1,1,0,0};
         int mozliweY[] = {0,0,-1,1};
@@ -35,7 +35,7 @@ void Guarana::Akcja() {
 
         if (bezpieczne.size() > 0) {
             int wybrany = rand() % bezpieczne.size();
-            swiat->DodajOrganizm(new Guarana(PolozenieX + mozliweX[bezpieczne[wybrany]],PolozenieY + mozliweY[bezpieczne[wybrany]],swiat,ZNAK_GUARANY));
+            swiat->DodajOrganizm(new Guarana(PolozenieX + mozliweX[bezpieczne[wybrany]],PolozenieY + mozliweY[bezpieczne[wybrany]],swiat));
         }
     }
 }

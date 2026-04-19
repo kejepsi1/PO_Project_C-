@@ -4,7 +4,7 @@
 #define ZNAK_WILKA 'W'
 using namespace std;
 
-Wilk::Wilk(int PolozenieX, int PolozenieY, Swiat* swiat, char znak) :
+Wilk::Wilk(int PolozenieX, int PolozenieY, Swiat* swiat) :
 Zwierze(9,5,PolozenieX,PolozenieY, swiat, ZNAK_WILKA)
 {}
 
@@ -29,5 +29,5 @@ bool Wilk::CzyObronil(Organizm *napastnik) {
 }
 
 Organizm *Wilk::Rozmnazaj(int x, int y) {
-    return new Wilk(x,y,swiat,ZNAK_WILKA);
+    return new Wilk(x,y,swiat);
 }

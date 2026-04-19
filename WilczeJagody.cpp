@@ -1,19 +1,20 @@
-#include "Trawa.h"
+#include "WilczeJagody.h"
+
 #include "Roslina.h"
 #include "Swiat.h"
 #include <iostream>
 #include <vector>
-#define ZNAK_TRAWY 'T'
+#define ZNAK_WILCZYCH_JAGOD 'J'
 
-Trawa::Trawa(int PolozenieX, int PolozenieY, Swiat *swiat) :
-Roslina(0,0,PolozenieX, PolozenieY, swiat, ZNAK_TRAWY)
+WilczeJagody::WilczeJagody(int PolozenieX, int PolozenieY, Swiat *swiat) :
+Roslina(99,0,PolozenieX, PolozenieY, swiat, ZNAK_WILCZYCH_JAGOD)
 {}
 
-void Trawa::Rysuj() const {
-    swiat->NarysujOrganizm(PolozenieX,PolozenieY,ZNAK_TRAWY);
+void WilczeJagody::Rysuj() const {
+    swiat->NarysujOrganizm(PolozenieX,PolozenieY,ZNAK_WILCZYCH_JAGOD);
 }
 
-void Trawa::Akcja() {
+void WilczeJagody::Akcja() {
     if (this->wiek == 0) {
         return;
     }
@@ -35,14 +36,14 @@ void Trawa::Akcja() {
 
         if (bezpieczne.size() > 0) {
             int wybrany = rand() % bezpieczne.size();
-            swiat->DodajOrganizm(new Trawa(PolozenieX + mozliweX[bezpieczne[wybrany]],PolozenieY + mozliweY[bezpieczne[wybrany]],swiat));
+            swiat->DodajOrganizm(new WilczeJagody(PolozenieX + mozliweX[bezpieczne[wybrany]],PolozenieY + mozliweY[bezpieczne[wybrany]],swiat));
         }
     }
 }
 
 
 
-bool Trawa::SprawdzajSasiadow(int x, int y) {
+bool WilczeJagody::SprawdzajSasiadow(int x, int y) {
     for (int i=0;i<swiat->organizmy.size();i++) {
         if (x == swiat->organizmy[i]->GetPolozenieX() && y == swiat->organizmy[i]->GetPolozenieY()) {
             return false;
@@ -51,7 +52,7 @@ bool Trawa::SprawdzajSasiadow(int x, int y) {
     return true;
 }
 
-bool Trawa::CzyObronil(Organizm *napastnik) {
+bool WilczeJagody::CzyObronil(Organizm *napastnik) {
     if (napastnik->GetSila() == this->GetSila()) {
         if (napastnik->GetWiek() > this->GetWiek()) {
             return false;
@@ -63,4 +64,8 @@ bool Trawa::CzyObronil(Organizm *napastnik) {
     }
     return true;
 
+}
+
+void WilczeJagody::Kolizja() {
+    swiat->SprawdzajKolizje(this);
 }

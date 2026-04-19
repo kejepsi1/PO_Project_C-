@@ -19,6 +19,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/PO_Projekt.dir/Swiat.cpp.o.d"
   "CMakeFiles/PO_Projekt.dir/Trawa.cpp.o"
   "CMakeFiles/PO_Projekt.dir/Trawa.cpp.o.d"
+  "CMakeFiles/PO_Projekt.dir/WilczeJagody.cpp.o"
+  "CMakeFiles/PO_Projekt.dir/WilczeJagody.cpp.o.d"
   "CMakeFiles/PO_Projekt.dir/Wilk.cpp.o"
   "CMakeFiles/PO_Projekt.dir/Wilk.cpp.o.d"
   "CMakeFiles/PO_Projekt.dir/Zolw.cpp.o"

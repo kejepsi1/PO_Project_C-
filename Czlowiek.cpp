@@ -5,7 +5,7 @@
 #define ZNAK_CZLOWIEKA 'C'
 using namespace std;
 
-Czlowiek::Czlowiek(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat* swiat, char znak) :
+Czlowiek::Czlowiek(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat* swiat) :
 Zwierze(5,4,PolozenieX,PolozenieY, swiat, ZNAK_CZLOWIEKA)
 {}
 

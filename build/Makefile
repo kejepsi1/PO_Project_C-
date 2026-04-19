@@ -369,6 +369,30 @@ Trawa.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/Trawa.cpp.s
 .PHONY : Trawa.cpp.s
 
+WilczeJagody.o: WilczeJagody.cpp.o
+.PHONY : WilczeJagody.o
+
+# target to build an object file
+WilczeJagody.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/WilczeJagody.cpp.o
+.PHONY : WilczeJagody.cpp.o
+
+WilczeJagody.i: WilczeJagody.cpp.i
+.PHONY : WilczeJagody.i
+
+# target to preprocess a source file
+WilczeJagody.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/WilczeJagody.cpp.i
+.PHONY : WilczeJagody.cpp.i
+
+WilczeJagody.s: WilczeJagody.cpp.s
+.PHONY : WilczeJagody.s
+
+# target to generate assembly for a file
+WilczeJagody.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PO_Projekt.dir/build.make CMakeFiles/PO_Projekt.dir/WilczeJagody.cpp.s
+.PHONY : WilczeJagody.cpp.s
+
 Wilk.o: Wilk.cpp.o
 .PHONY : Wilk.o
 
@@ -504,6 +528,9 @@ help:
 	@echo "... Trawa.o"
 	@echo "... Trawa.i"
 	@echo "... Trawa.s"
+	@echo "... WilczeJagody.o"
+	@echo "... WilczeJagody.i"
+	@echo "... WilczeJagody.s"
 	@echo "... Wilk.o"
 	@echo "... Wilk.i"
 	@echo "... Wilk.s"

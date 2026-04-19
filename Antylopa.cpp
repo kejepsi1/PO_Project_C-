@@ -4,7 +4,7 @@
 #define ZNAK_ANTYLOPY 'A'
 using namespace std;
 
-Antylopa::Antylopa(int PolozenieX, int PolozenieY, Swiat* swiat, char znak) :
+Antylopa::Antylopa(int PolozenieX, int PolozenieY, Swiat* swiat) :
 Zwierze(4,4,PolozenieX,PolozenieY, swiat, ZNAK_ANTYLOPY)
 {}
 
@@ -110,5 +110,5 @@ bool Antylopa::CzyObronil(Organizm *napastnik) {
 }
 
 Organizm *Antylopa::Rozmnazaj(int x, int y) {
-    return new Antylopa(x,y,swiat,ZNAK_ANTYLOPY);
+    return new Antylopa(x,y,swiat);
 }

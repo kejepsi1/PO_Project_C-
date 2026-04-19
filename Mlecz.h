@@ -5,7 +5,7 @@
 
 class Mlecz  : public Roslina{
 public:
-    Mlecz(int PolozenieX, int PolozenieY, Swiat* swiat, char znak);
+    Mlecz(int PolozenieX, int PolozenieY, Swiat* swiat);
     void Rysuj() const override;
     void Akcja() override;
     bool SprawdzajSasiadow(int x, int y);

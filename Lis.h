@@ -5,7 +5,7 @@
 
 class Lis : public Zwierze {
 public:
-    Lis(int PolozenieX, int PolozenieY, Swiat* swiat, char znak);
+    Lis(int PolozenieX, int PolozenieY, Swiat* swiat);
     void Rysuj() const override;
     void Akcja() override;
     bool DobryWech(int x, int y);
