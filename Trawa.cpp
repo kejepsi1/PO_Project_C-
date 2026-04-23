@@ -35,6 +35,7 @@ void Trawa::Akcja() {
 
         if (bezpieczne.size() > 0) {
             int wybrany = rand() % bezpieczne.size();
+            swiat->DodajKomunikat("Powstaje nowa Trawa");
             swiat->DodajOrganizm(new Trawa(PolozenieX + mozliweX[bezpieczne[wybrany]],PolozenieY + mozliweY[bezpieczne[wybrany]],swiat));
         }
     }
@@ -63,4 +64,11 @@ bool Trawa::CzyObronil(Organizm *napastnik) {
     }
     return true;
 
+}
+
+bool Trawa::CzyMoznaZdeptac(Organizm* napastnik) {
+    if (napastnik->CzyDrapieznik()) {
+        return true;
+    }
+    return false;
 }

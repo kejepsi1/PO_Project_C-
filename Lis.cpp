@@ -69,3 +69,7 @@ bool Lis::CzyObronil(Organizm *napastnik) {
 Organizm *Lis::Rozmnazaj(int x, int y) {
     return new Lis(x,y,swiat);
 }
+
+bool Lis::CzyDrapieznik() {
+    return true;
+}

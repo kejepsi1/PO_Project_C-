@@ -31,3 +31,7 @@ bool Wilk::CzyObronil(Organizm *napastnik) {
 Organizm *Wilk::Rozmnazaj(int x, int y) {
     return new Wilk(x,y,swiat);
 }
+
+bool Wilk::CzyDrapieznik() {
+    return true;
+}

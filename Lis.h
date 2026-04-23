@@ -11,6 +11,7 @@ public:
     bool DobryWech(int x, int y);
     bool CzyObronil(Organizm *napastnik) override;
     Organizm* Rozmnazaj(int x, int y) override;
+    bool CzyDrapieznik() override;
 };
 
 

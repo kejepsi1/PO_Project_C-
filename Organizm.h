@@ -1,5 +1,6 @@
 #ifndef PO_PROJEKT_ORGANIZM_H
 #define PO_PROJEKT_ORGANIZM_H
+#include <string>
 
 class Swiat;
 
@@ -36,6 +37,9 @@ public:
     virtual void Cofnij();
     virtual Organizm* Rozmnazaj(int x,int y);
     virtual void RozmnozSie();
+    virtual bool CzyMoznaZdeptac(Organizm* napastnik);
+    virtual bool CzyDrapieznik();
+    virtual std::string DoZapisu();
 };
 
 

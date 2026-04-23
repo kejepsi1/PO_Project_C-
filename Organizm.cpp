@@ -120,5 +120,17 @@ void Organizm::Zabij() {
     czyZyje = false;
 }
 
+bool Organizm::CzyMoznaZdeptac(Organizm* napastnik) {
+    return false;
+}
+
+bool Organizm::CzyDrapieznik() {
+    return false;
+}
+
+std::string Organizm::DoZapisu() {
+    return std::string(1, znak) + " " + std::to_string(PolozenieX) + " " + std::to_string(PolozenieY) + " " + std::to_string(sila) + " " + std::to_string(wiek);
+}
+
 Organizm::~Organizm() = default;
 

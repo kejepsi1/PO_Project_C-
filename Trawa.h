@@ -10,7 +10,7 @@ public:
     void Akcja() override;
     bool SprawdzajSasiadow(int x, int y);
     bool CzyObronil(Organizm *napastnik) override;
-
+    bool CzyMoznaZdeptac(Organizm* napaastnik) override;
 
 };
 

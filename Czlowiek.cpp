@@ -14,6 +14,12 @@ void Czlowiek::Rysuj() const {
 }
 
 void Czlowiek::Akcja() {
+    if (czas_trwania_umiejetnosci != 0) {
+        czas_trwania_umiejetnosci--;
+    }
+    if (czas_odnowienia != 0) {
+        czas_odnowienia--;
+    }
     int klawisz = getch();
     int noweX = PolozenieX;
     int noweY = PolozenieY;
@@ -46,6 +52,19 @@ void Czlowiek::Akcja() {
             noweX+=1;
             noweY+=1;
             break;
+        case 'u':
+            if (czas_odnowienia == 0) {
+                swiat->DodajKomunikat("Czlowiek uzywa specjalnej umiejetnosci");
+                this->czas_odnowienia = 10;
+                this->czas_trwania_umiejetnosci = 5;
+            }
+            break;
+        case 's':
+            swiat->ZapiszSwiat();
+            break;
+        case 'l':
+            swiat->czyWczytac = true;
+            break;
         case 'q':
             endwin();
             exit(0);
@@ -70,4 +89,52 @@ bool Czlowiek::CzyObronil(Organizm *napastnik) {
     }
     return true;
 
+}
+
+bool Czlowiek::CzyOdpycha(Organizm *napastnik) {
+    if (czas_trwania_umiejetnosci != 0 ) {
+        int mozliweX[] = {-1,1,0,0,-1,-1,1,1};
+        int mozliweY[] = {0,0,-1,1,-1,1,-1,1};
+        std::vector<int> bezpieczne;
+        for (int j=0;j < 8;j++) {
+            int potencjalneX = PolozenieX + mozliweX[j];
+            int potencjalneY = PolozenieY + mozliweY[j];
+            bool found = false;
+            if (potencjalneX >= 0 && potencjalneX < swiat->GetX() && potencjalneY >=0 && potencjalneY < swiat->GetY()) {
+                for (int i=0;i<swiat->organizmy.size();i++) {
+                    if (swiat->organizmy[i]->GetPolozenieX() == potencjalneX && swiat->organizmy[i]->GetPolozenieY() == potencjalneY) {
+                        found = true;
+                        break;
+                    }
+                }
+                if (!found)
+                    bezpieczne.push_back(j);
+            }
+        }
+        if (!bezpieczne.empty()) {
+            int wybrany = rand() % bezpieczne.size();
+            StarePolozenieX = PolozenieX;
+            StarePolozenieY = PolozenieY;
+            PolozenieX+= mozliweX[wybrany];
+            PolozenieY+= mozliweY[wybrany];
+            return true;
+        }
+    }
+    return false;
+}
+
+bool Czlowiek::CzyDrapieznik() {
+    return true;
+}
+
+std::string Czlowiek::DoZapisu() {
+    return std::string(1, znak) + " " + std::to_string(PolozenieX) + " " + std::to_string(PolozenieY) + " " + std::to_string(sila) + " " + std::to_string(wiek) + " " + std::to_string(czas_odnowienia) + " " + std::to_string(czas_trwania_umiejetnosci);
+}
+
+void Czlowiek::SetCzasOdnowienia(int czas) {
+    czas_odnowienia = czas;
+}
+
+void Czlowiek::SetCzasTrwaniaUmiejetnosci(int czas) {
+    czas_trwania_umiejetnosci = czas;
 }

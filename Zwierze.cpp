@@ -35,6 +35,9 @@ void Zwierze::RozmnozSie() {
         int noweY = PolozenieY + mozliweY[bezpieczne[wybrany]];
         Organizm* dziecko = this->Rozmnazaj(noweX, noweY);
         swiat->DodajOrganizm(dziecko);
+        string tekst = "Narodzil sie nowy organizm: ";
+        tekst += this->GetZnak();
+        swiat->DodajKomunikat(tekst);
         dziecko->SetWiek(0);
     }
 }

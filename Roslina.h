@@ -6,6 +6,7 @@
 class Roslina : public Organizm {
 public:
     Roslina(int sila, int inicjatywa, int PolozenieX, int PolozenieY,Swiat* swiat, char znak);
+    void Kolizja() override;
     virtual ~Roslina();
 };
 

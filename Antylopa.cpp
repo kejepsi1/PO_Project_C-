@@ -89,8 +89,13 @@ bool Antylopa::CzyOdpycha(Organizm *napastnik) {
     }
     if (!bezpieczne.empty()) {
         int wybrany = rand() % bezpieczne.size();
+        StarePolozenieX = PolozenieX;
+        StarePolozenieY = PolozenieY;
         PolozenieX+= mozliweX[wybrany];
         PolozenieY+= mozliweY[wybrany];
+        string tekst = "Antylopa uciekla przed: ";
+        tekst += napastnik->GetZnak();
+        swiat->DodajKomunikat(tekst);
         return true;
     }
     return false;

@@ -37,6 +37,7 @@ void Mlecz::Akcja() {
 
             if (bezpieczne.size() > 0) {
                 int wybrany = rand() % bezpieczne.size();
+                swiat->DodajKomunikat("Powstaje nowy Mlecz");
                 swiat->DodajOrganizm(new Mlecz(PolozenieX + mozliweX[bezpieczne[wybrany]],PolozenieY + mozliweY[bezpieczne[wybrany]],swiat));
             }
         }
@@ -66,4 +67,11 @@ bool Mlecz::CzyObronil(Organizm *napastnik) {
     }
     return true;
 
+}
+
+bool Mlecz::CzyMoznaZdeptac(Organizm *napastnik) {
+    if (napastnik->CzyDrapieznik()) {
+        return true;
+    }
+    return false;
 }

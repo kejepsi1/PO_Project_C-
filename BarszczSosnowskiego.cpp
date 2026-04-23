@@ -32,6 +32,9 @@ void BarszczSosnowskiego::Akcja() {
 
             if (sasiad->GetPolozenieX() == potencjalneX && sasiad->GetPolozenieY() == potencjalneY) {
                 if (sasiad->CzyZyje() && dynamic_cast<Zwierze*>(sasiad) != nullptr) {
+                    std::string tekst = "Barszcz Sosnowskiego zabija: ";
+                    tekst += sasiad->GetZnak();
+                    swiat->DodajKomunikat(tekst);
                     sasiad->Zabij();
                 }
             }
@@ -56,6 +59,7 @@ void BarszczSosnowskiego::Akcja() {
 
         if (bezpieczne.size() > 0) {
             int wybrany = rand() % bezpieczne.size();
+            swiat->DodajKomunikat("Powstaje nowy Barszcz Sosnowskiego");
             swiat->DodajOrganizm(new BarszczSosnowskiego(PolozenieX + mozliweX[bezpieczne[wybrany]],PolozenieY + mozliweY[bezpieczne[wybrany]],swiat));
         }
     }

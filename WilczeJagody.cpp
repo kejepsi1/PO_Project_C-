@@ -36,6 +36,7 @@ void WilczeJagody::Akcja() {
 
         if (bezpieczne.size() > 0) {
             int wybrany = rand() % bezpieczne.size();
+            swiat->DodajKomunikat("Powstaja nowe Wilcze Jagody");
             swiat->DodajOrganizm(new WilczeJagody(PolozenieX + mozliweX[bezpieczne[wybrany]],PolozenieY + mozliweY[bezpieczne[wybrany]],swiat));
         }
     }
@@ -54,6 +55,9 @@ bool WilczeJagody::SprawdzajSasiadow(int x, int y) {
 
 bool WilczeJagody::CzyObronil(Organizm *napastnik) {
     napastnik->Zabij();
+    std::string tekst = "Wilcze Jagody zabijaja organizm: ";
+    tekst += napastnik->GetZnak();
+    swiat->DodajKomunikat(tekst);
     return false;
 }
 
