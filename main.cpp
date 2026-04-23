@@ -28,24 +28,28 @@ int main() {
     cbreak();
     srand(time(NULL));
     Swiat* swiat = new Swiat(x,y);
-    swiat->DodajOrganizm(new Czlowiek(5, 4, rand() % x, rand() % y, swiat));
-    int ilosc_zwierzat = 3;
+    swiat->DodajBezpiecznieOrganizm(new Czlowiek(5, 4, 0, 0, swiat));
+    int ilosc_zwierzat = 5;
+    int ilosc_roslin = 3;
 
     for (int i = 0; i < ilosc_zwierzat; i++) {
-        swiat->DodajOrganizm(new Wilk(rand() % x, rand() % y, swiat));
-        swiat->DodajOrganizm(new Owca(rand() % x, rand() % y, swiat));
-        swiat->DodajOrganizm(new Lis(rand() % x, rand() % y, swiat));
-        swiat->DodajOrganizm(new Zolw(rand() % x, rand() % y, swiat));
-        swiat->DodajOrganizm(new Antylopa(rand() % x, rand() % y, swiat));
+        swiat->DodajBezpiecznieOrganizm(new Wilk(0,0, swiat));
+        swiat->DodajBezpiecznieOrganizm(new Owca(0,0, swiat));
+        swiat->DodajBezpiecznieOrganizm(new Lis(0,0, swiat));
+        swiat->DodajBezpiecznieOrganizm(new Zolw(0,0, swiat));
+        swiat->DodajBezpiecznieOrganizm(new Antylopa(0,0, swiat));
+    }
 
-        swiat->DodajOrganizm(new Trawa(rand() % x, rand() % y, swiat));
-        swiat->DodajOrganizm(new Mlecz(rand() % x, rand() % y, swiat));
-        swiat->DodajOrganizm(new Guarana(rand() % x, rand() % y, swiat));
-        swiat->DodajOrganizm(new WilczeJagody(rand() % x, rand() % y, swiat));
-        swiat->DodajOrganizm(new BarszczSosnowskiego(rand() % x, rand() % y, swiat));
+    for (int i = 0; i < ilosc_roslin; i++) {
+        swiat->DodajBezpiecznieOrganizm(new Trawa(0,0, swiat));
+        swiat->DodajBezpiecznieOrganizm(new Mlecz(0,0, swiat));
+        swiat->DodajBezpiecznieOrganizm(new Guarana(0,0, swiat));
+        swiat->DodajBezpiecznieOrganizm(new WilczeJagody(0,0, swiat));
+        swiat->DodajBezpiecznieOrganizm(new BarszczSosnowskiego(0,0, swiat));
     }
     swiat->Graj();
     endwin();
     echo();
+    delete swiat;
     return 0;
 }

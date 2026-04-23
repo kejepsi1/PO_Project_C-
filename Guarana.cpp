@@ -40,22 +40,7 @@ void Guarana::Akcja() {
     }
 }
 
-
-
-bool Guarana::SprawdzajSasiadow(int x, int y) {
-    for (int i=0;i<swiat->organizmy.size();i++) {
-        if (x == swiat->organizmy[i]->GetPolozenieX() && y == swiat->organizmy[i]->GetPolozenieY()) {
-            return false;
-        }
-    }
-    return true;
-}
-
 bool Guarana::CzyObronil(Organizm *napastnik) {
     napastnik->SetSila(napastnik->GetSila() + 3);
     return false;
-}
-
-void Guarana::Kolizja() {
-    swiat->SprawdzajKolizje(this);
 }

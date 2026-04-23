@@ -19,6 +19,7 @@ public:
     int GetX() const;
     int GetY() const;
     void RysujSwiat();
+    void DodajBezpiecznieOrganizm(Organizm* organizm);
     void DodajOrganizm(Organizm* organizm);
     void NarysujOrganizm(int PolozenieX, int PolozenieY, char znak);
     void WykonajTure();

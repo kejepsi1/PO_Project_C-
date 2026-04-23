@@ -12,10 +12,10 @@ public:
     void Akcja() override;
     bool CzyObronil(Organizm *napastnik) override;
     bool CzyDrapieznik() override;
-    bool CzyOdpycha(Organizm *napastnik) override;
     std::string DoZapisu() override;
     void SetCzasOdnowienia(int czas);
     void SetCzasTrwaniaUmiejetnosci(int czas);
+    bool UniknijSmierci(Organizm *napastnik) override;
 };
 
 

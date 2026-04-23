@@ -16,6 +16,8 @@ void Lis::Akcja() {
     if (this->wiek == 0) {
         return;
     }
+    StarePolozenieX = PolozenieX;
+    StarePolozenieY = PolozenieY;
     int mozliweX[] = {-1,1,0,0,-1,-1,1,1};
     int mozliweY[] = {0,0,-1,1,-1,1,-1,1};
     std::vector<int> bezpieczne;
@@ -31,8 +33,6 @@ void Lis::Akcja() {
     }
     
     if (bezpieczne.size() > 0) {
-        StarePolozenieX = PolozenieX;
-        StarePolozenieY = PolozenieY;
         int wybrany = rand() % bezpieczne.size();
         PolozenieX+= mozliweX[bezpieczne[wybrany]];
         PolozenieY+= mozliweY[bezpieczne[wybrany]];
@@ -42,7 +42,7 @@ void Lis::Akcja() {
 bool Lis::DobryWech(int x, int y) {
     for (int i=0;i<swiat->organizmy.size();i++) {
         if (x == swiat->organizmy[i]->GetPolozenieX() && y == swiat->organizmy[i]->GetPolozenieY()) {
-            if (sila < swiat->organizmy[i]->GetSila()) {
+            if (swiat->organizmy[i]->CzyZyje() && sila < swiat->organizmy[i]->GetSila()) {
                 return false;
             }
         }
@@ -51,19 +51,10 @@ bool Lis::DobryWech(int x, int y) {
 }
 
 bool Lis::CzyObronil(Organizm *napastnik) {
-    if (napastnik->GetSila() == this->GetSila()) {
-        if (napastnik->GetWiek() > this->GetWiek()) {
-            return false;
-        }
-        return true;
-
-    }
-
-    if (napastnik->GetSila() > this->GetSila()) {
+    if (napastnik->GetSila() >= this->GetSila()) {
         return false;
     }
     return true;
-
 }
 
 Organizm *Lis::Rozmnazaj(int x, int y) {

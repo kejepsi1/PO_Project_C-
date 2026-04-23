@@ -42,25 +42,10 @@ void WilczeJagody::Akcja() {
     }
 }
 
-
-
-bool WilczeJagody::SprawdzajSasiadow(int x, int y) {
-    for (int i=0;i<swiat->organizmy.size();i++) {
-        if (x == swiat->organizmy[i]->GetPolozenieX() && y == swiat->organizmy[i]->GetPolozenieY()) {
-            return false;
-        }
-    }
-    return true;
-}
-
 bool WilczeJagody::CzyObronil(Organizm *napastnik) {
-    napastnik->Zabij();
+    this->Zabij();
     std::string tekst = "Wilcze Jagody zabijaja organizm: ";
     tekst += napastnik->GetZnak();
     swiat->DodajKomunikat(tekst);
-    return false;
-}
-
-void WilczeJagody::Kolizja() {
-    swiat->SprawdzajKolizje(this);
+    return true;
 }

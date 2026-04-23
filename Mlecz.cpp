@@ -44,29 +44,11 @@ void Mlecz::Akcja() {
     }
 }
 
-
-
-bool Mlecz::SprawdzajSasiadow(int x, int y) {
-    for (int i=0;i<swiat->organizmy.size();i++) {
-        if (x == swiat->organizmy[i]->GetPolozenieX() && y == swiat->organizmy[i]->GetPolozenieY()) {
-            return false;
-        }
-    }
-    return true;
-}
-
 bool Mlecz::CzyObronil(Organizm *napastnik) {
-    if (napastnik->GetSila() == this->GetSila()) {
-        if (napastnik->GetWiek() > this->GetWiek()) {
-            return false;
-        }
-        return true;
-    }
-    if (napastnik->GetSila() > this->GetSila()) {
+    if (napastnik->GetSila() >= this->GetSila()) {
         return false;
     }
     return true;
-
 }
 
 bool Mlecz::CzyMoznaZdeptac(Organizm *napastnik) {

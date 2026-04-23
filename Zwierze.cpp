@@ -20,7 +20,7 @@ void Zwierze::RozmnozSie() {
         if (potencjalneX >= 0 && potencjalneX < swiat->GetX() && potencjalneY >= 0 && potencjalneY < swiat->GetY()) {
             bool zajete = false;
             for (int i = 0; i < swiat->organizmy.size(); i++) {
-                if (swiat->organizmy[i]->GetPolozenieX() == potencjalneX && swiat->organizmy[i]->GetPolozenieY() == potencjalneY) {
+                if (swiat->organizmy[i]->CzyZyje() && swiat->organizmy[i]->GetPolozenieX() == potencjalneX && swiat->organizmy[i]->GetPolozenieY() == potencjalneY) {
                     zajete = true;
                     break;
                 }

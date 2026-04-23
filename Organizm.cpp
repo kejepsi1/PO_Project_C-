@@ -9,6 +9,8 @@ Organizm::Organizm(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swi
     this->inicjatywa=inicjatywa;
     this->PolozenieX=PolozenieX;
     this->PolozenieY=PolozenieY;
+    this->StarePolozenieX = PolozenieX;
+    this->StarePolozenieY = PolozenieY;
     this->swiat=swiat;
     this->znak=znak;
     this->wiek=0;
@@ -46,6 +48,8 @@ void Organizm::Akcja() {
     if (this->wiek == 0) {
         return;
     }
+    StarePolozenieX=PolozenieX;
+    StarePolozenieY=PolozenieY;
     int noweX = PolozenieX;
     int noweY = PolozenieY;
     int ruch = rand() % 8;
@@ -80,8 +84,6 @@ void Organizm::Akcja() {
             break;
     }
     if (noweX >= 0 && noweX < swiat->GetX() && noweY >=0 && noweY < swiat->GetY()) {
-        StarePolozenieX=PolozenieX;
-        StarePolozenieY=PolozenieY;
         PolozenieX=noweX;
         PolozenieY=noweY;
     }
@@ -112,6 +114,14 @@ void Organizm::SetSila(int x) {
     this->sila = x;
 }
 
+void Organizm::SetPolozenieX(int x) {
+    this->PolozenieX = x;
+}
+
+void Organizm::SetPolozenieY(int y) {
+    this->PolozenieY = y;
+}
+
 bool Organizm::CzyZyje() const {
     return czyZyje;
 }
@@ -125,6 +135,10 @@ bool Organizm::CzyMoznaZdeptac(Organizm* napastnik) {
 }
 
 bool Organizm::CzyDrapieznik() {
+    return false;
+}
+
+bool Organizm::UniknijSmierci(Organizm *napastnik) {
     return false;
 }
 

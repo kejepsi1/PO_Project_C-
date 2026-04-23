@@ -41,29 +41,11 @@ void Trawa::Akcja() {
     }
 }
 
-
-
-bool Trawa::SprawdzajSasiadow(int x, int y) {
-    for (int i=0;i<swiat->organizmy.size();i++) {
-        if (x == swiat->organizmy[i]->GetPolozenieX() && y == swiat->organizmy[i]->GetPolozenieY()) {
-            return false;
-        }
-    }
-    return true;
-}
-
 bool Trawa::CzyObronil(Organizm *napastnik) {
-    if (napastnik->GetSila() == this->GetSila()) {
-        if (napastnik->GetWiek() > this->GetWiek()) {
-            return false;
-        }
-        return true;
-    }
-    if (napastnik->GetSila() > this->GetSila()) {
+    if (napastnik->GetSila() >= this->GetSila()) {
         return false;
     }
     return true;
-
 }
 
 bool Trawa::CzyMoznaZdeptac(Organizm* napastnik) {

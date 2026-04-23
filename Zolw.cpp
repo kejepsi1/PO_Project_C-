@@ -17,9 +17,11 @@ void Zolw::Akcja() {
     if (this->wiek == 0) {
         return;
     }
+    StarePolozenieX = PolozenieX;
+    StarePolozenieY = PolozenieY;
     int noweX = PolozenieX;
     int noweY = PolozenieY;
-    int ruch = rand() % 4;
+    int ruch = rand() % 8;
     int czyrusza = rand() % 4;
     switch (czyrusza) {
         case 0:
@@ -40,8 +42,24 @@ void Zolw::Akcja() {
             case 3:
                     noweY-=1;
                     break;
+            case 4:
+                    noweX-=1;
+                    noweY-=1;
+                    break;
+            case 5:
+                    noweX-=1;
+                    noweY+=1;
+                    break;
+            case 6:
+                    noweX+=1;
+                    noweY-=1;
+                    break;
+            case 7:
+                    noweX+=1;
+                    noweY+=1;
+                    break;
             }
-            if (noweX >= 0 && noweX < swiat->GetX() && noweY >=0 & noweY < swiat->GetY()) {
+            if (noweX >= 0 && noweX < swiat->GetX() && noweY >=0 && noweY < swiat->GetY()) {
                 PolozenieX=noweX;
                 PolozenieY=noweY;
             }
@@ -51,24 +69,18 @@ void Zolw::Akcja() {
 bool Zolw::CzyOdpycha(Organizm *napastnik) {
     if (napastnik->GetSila() < 5) {
         napastnik->Cofnij();
+        swiat->DodajKomunikat("Zolw chowa sie w skorupie i odpycha atak");
         return true;
     }
     return false;
 }
 
 bool Zolw::CzyObronil(Organizm *napastnik) {
-    if (napastnik->GetSila() == this->GetSila()) {
-        if (napastnik->GetWiek() > this->GetWiek()) {
-            return false;
-        }
-        return true;
-    }
-    if (napastnik->GetSila() > this->GetSila()) {
+    if (napastnik->GetSila() >= this->GetSila()) {
         return false;
     }
     return true;
 }
-
 Organizm* Zolw::Rozmnazaj(int x,int y) {
     return new Zolw(x,y,swiat);
 }

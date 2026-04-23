@@ -25,6 +25,8 @@ public:
     int GetPolozenieY() const;
     char GetZnak() const;
     int GetWiek() const;
+    void SetPolozenieX(int x);
+    void SetPolozenieY(int y);
     void SetWiek(int x);
     void SetSila(int x);
     bool CzyZyje() const;
@@ -39,6 +41,7 @@ public:
     virtual void RozmnozSie();
     virtual bool CzyMoznaZdeptac(Organizm* napastnik);
     virtual bool CzyDrapieznik();
+    virtual bool UniknijSmierci(Organizm* napastnik);
     virtual std::string DoZapisu();
 };
 
