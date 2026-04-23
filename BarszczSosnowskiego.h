@@ -8,9 +8,8 @@ public:
     BarszczSosnowskiego(int PolozenieX, int PolozenieY, Swiat* swiat);
     void Rysuj() const override;
     void Akcja() override;
-    bool SprawdzajSasiadow(int x, int y);
+    bool SprawdzajSasiadow(int x, int y) override;
     bool CzyObronil(Organizm *napastnik) override;
-    void Kolizja() override;
 };
 
 

@@ -57,7 +57,7 @@ void Swiat::RysujSwiat() {
         }
     }
     mvprintw(this->y, 0, "Mikolaj Tchorek 208435");
-    int pierwszaLiniaLogow = this->y + 2;
+    int pierwszaLiniaLogow = this->y + 3;
     mvprintw(pierwszaLiniaLogow - 1, 0, "--- RAPORT Z TURY ---");
 
     for (int i = 0; i < komunikaty.size(); i++) {
@@ -66,6 +66,32 @@ void Swiat::RysujSwiat() {
 
     refresh();
 
+}
+
+void Swiat::DodajBezpiecznieOrganizm(Organizm *organizm) {
+    if (organizmy.size() >= x * y) {
+        delete organizm;
+        return;
+    }
+
+    bool zajete;
+    int randX, randY;
+    do {
+        zajete = false;
+        randX = rand() % x;
+        randY = rand() % y;
+
+        for(int i = 0; i < organizmy.size(); i++) {
+            if (organizmy[i]->GetPolozenieX() == randX && organizmy[i]->GetPolozenieY() == randY) {
+                zajete = true;
+                break;
+            }
+        }
+    } while(zajete);
+
+    organizm->SetPolozenieX(randX);
+    organizm->SetPolozenieY(randY);
+    this->DodajOrganizm(organizm);
 }
 
 void Swiat::DodajOrganizm(Organizm *organizm) {
@@ -85,7 +111,8 @@ void Swiat::Graj() {
             }
         }
         if (CzlowiekZyje == false) {
-            mvprintw(0,0, "Koniec Gry, Czlowiek umarl");
+            RysujSwiat();
+            mvprintw(this->y + 1, 0, "Koniec Gry, Czlowiek umarl");
             refresh();
             getch();
             endwin();
@@ -144,17 +171,17 @@ void Swiat::SprawdzajKolizje(Organizm* napastnik) {
             }
             if (organizmy[i]->CzyOdpycha(napastnik) == false) {
                 if (organizmy[i]->CzyObronil(napastnik) == false) {
+                    if (obronca->UniknijSmierci(napastnik)) {
+                        return;
+                    }
                     string tekst = string(1, napastnik->GetZnak()) + " zjada " + string(1, obronca->GetZnak());
                     DodajKomunikat(tekst);
                     obronca->Zabij();
                     return;
                 }
                 else {
-                    for (int j=0;j<organizmy.size();j++) {
-                        if (organizmy[j] == napastnik) {
-                            organizmy.erase(organizmy.begin() + j);
-                            break;
-                        }
+                    if (napastnik->UniknijSmierci(obronca)) {
+                        return;
                     }
                     string tekst = string(1, obronca->GetZnak()) + " zjada " + string(1, napastnik->GetZnak());
                     DodajKomunikat(tekst);

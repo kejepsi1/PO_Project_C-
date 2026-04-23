@@ -8,9 +8,7 @@ public:
     Guarana(int PolozenieX, int PolozenieY, Swiat* swiat);
     void Rysuj() const override;
     void Akcja() override;
-    bool SprawdzajSasiadow(int x, int y);
     bool CzyObronil(Organizm *napastnik) override;
-    void Kolizja() override;
 };
 
 

@@ -13,9 +13,11 @@ void Antylopa::Rysuj() const {
 }
 
 void Antylopa::Akcja() {
+    StarePolozenieX = PolozenieX;
+    StarePolozenieY = PolozenieY;
     int noweX = PolozenieX;
     int noweY = PolozenieY;
-    int ruch = rand() % 4;
+    int ruch = rand() % 8;
     int ilepol = rand() % 2;
     switch (ilepol) {
         case 0:
@@ -32,8 +34,24 @@ void Antylopa::Akcja() {
             case 3:
                     noweY-=1;
                     break;
+            case 4:
+                    noweX-=1;
+                    noweY-=1;
+                    break;
+            case 5:
+                    noweX-=1;
+                    noweY+=1;
+                    break;
+            case 6:
+                    noweX+=1;
+                    noweY-=1;
+                    break;
+            case 7:
+                    noweX+=1;
+                    noweY+=1;
+                    break;
             }
-            if (noweX >= 0 && noweX < swiat->GetX() && noweY >=0 & noweY < swiat->GetY()) {
+            if (noweX >= 0 && noweX < swiat->GetX() && noweY >=0 && noweY < swiat->GetY()) {
                 PolozenieX=noweX;
                 PolozenieY=noweY;
             }
@@ -52,8 +70,24 @@ void Antylopa::Akcja() {
             case 3:
                     noweY-=2;
                     break;
+            case 4:
+                    noweX-=2;
+                    noweY-=2;
+                    break;
+            case 5:
+                    noweX-=2;
+                    noweY+=2;
+                    break;
+            case 6:
+                    noweX+=2;
+                    noweY-=2;
+                    break;
+            case 7:
+                    noweX+=2;
+                    noweY+=2;
+                    break;
             }
-            if (noweX >= 0 && noweX < swiat->GetX() && noweY >=0 & noweY < swiat->GetY()) {
+            if (noweX >= 0 && noweX < swiat->GetX() && noweY >=0 && noweY < swiat->GetY()) {
                 PolozenieX=noweX;
                 PolozenieY=noweY;
             }
@@ -91,8 +125,8 @@ bool Antylopa::CzyOdpycha(Organizm *napastnik) {
         int wybrany = rand() % bezpieczne.size();
         StarePolozenieX = PolozenieX;
         StarePolozenieY = PolozenieY;
-        PolozenieX+= mozliweX[wybrany];
-        PolozenieY+= mozliweY[wybrany];
+        PolozenieX+= mozliweX[bezpieczne[wybrany]];
+        PolozenieY+= mozliweY[bezpieczne[wybrany]];
         string tekst = "Antylopa uciekla przed: ";
         tekst += napastnik->GetZnak();
         swiat->DodajKomunikat(tekst);
@@ -102,13 +136,7 @@ bool Antylopa::CzyOdpycha(Organizm *napastnik) {
 }
 
 bool Antylopa::CzyObronil(Organizm *napastnik) {
-    if (napastnik->GetSila() == this->GetSila()) {
-        if (napastnik->GetWiek() > this->GetWiek()) {
-            return false;
-        }
-        return true;
-    }
-    if (napastnik->GetSila() > this->GetSila()) {
+    if (napastnik->GetSila() >= this->GetSila()) {
         return false;
     }
     return true;

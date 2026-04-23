@@ -13,19 +13,10 @@ void Wilk::Rysuj() const {
 }
 
 bool Wilk::CzyObronil(Organizm *napastnik) {
-    if (napastnik->GetSila() == this->GetSila()) {
-        if (napastnik->GetWiek() > this->GetWiek()) {
-            return false;
-        }
-        return true;
-
-    }
-
-    if (napastnik->GetSila() > this->GetSila()) {
+    if (napastnik->GetSila() >= this->GetSila()) {
         return false;
     }
     return true;
-
 }
 
 Organizm *Wilk::Rozmnazaj(int x, int y) {

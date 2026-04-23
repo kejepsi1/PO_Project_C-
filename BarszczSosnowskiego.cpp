@@ -32,10 +32,12 @@ void BarszczSosnowskiego::Akcja() {
 
             if (sasiad->GetPolozenieX() == potencjalneX && sasiad->GetPolozenieY() == potencjalneY) {
                 if (sasiad->CzyZyje() && dynamic_cast<Zwierze*>(sasiad) != nullptr) {
-                    std::string tekst = "Barszcz Sosnowskiego zabija: ";
-                    tekst += sasiad->GetZnak();
-                    swiat->DodajKomunikat(tekst);
-                    sasiad->Zabij();
+                    if (!sasiad->UniknijSmierci(this)) {
+                        std::string tekst = "Barszcz Sosnowskiego zabija: ";
+                        tekst += sasiad->GetZnak();
+                        swiat->DodajKomunikat(tekst);
+                        sasiad->Zabij();
+                    }
                 }
             }
         }
@@ -77,19 +79,7 @@ bool BarszczSosnowskiego::SprawdzajSasiadow(int x, int y) {
 }
 
 bool BarszczSosnowskiego::CzyObronil(Organizm *napastnik) {
-    if (napastnik->GetSila() == this->GetSila()) {
-        if (napastnik->GetWiek() > this->GetWiek()) {
-            return false;
-        }
-        return true;
-    }
-    if (napastnik->GetSila() > this->GetSila()) {
-        return false;
-    }
+    swiat->DodajKomunikat("Zwierze zjadlo Barszcz Sosnowskiego i zginelo");
+    this->Zabij();
     return true;
-
-}
-
-void BarszczSosnowskiego::Kolizja() {
-    swiat->SprawdzajKolizje(this);
 }
