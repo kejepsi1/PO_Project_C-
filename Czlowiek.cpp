@@ -77,13 +77,6 @@ void Czlowiek::Akcja() {
     }
 }
 
-bool Czlowiek::CzyObronil(Organizm *napastnik) {
-    if (napastnik->GetSila() >= this->GetSila()) {
-        return false;
-    }
-    return true;
-}
-
 bool Czlowiek::UniknijSmierci(Organizm *napastnik) {
     if (czas_trwania_umiejetnosci > 0) {
         int mozliweX[] = {-1,1,0,0,-1,-1,1,1};

@@ -11,7 +11,6 @@ public:
     void Rysuj() const override;
     void Akcja() override;
     bool DobryWech(int x, int y);
-    bool CzyObronil(Organizm *napastnik) override;
     bool CzyDrapieznik() override;
 };
 

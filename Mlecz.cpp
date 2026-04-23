@@ -44,13 +44,6 @@ void Mlecz::Akcja() {
     }
 }
 
-bool Mlecz::CzyObronil(Organizm *napastnik) {
-    if (napastnik->GetSila() >= this->GetSila()) {
-        return false;
-    }
-    return true;
-}
-
 bool Mlecz::CzyMoznaZdeptac(Organizm *napastnik) {
     if (napastnik->CzyDrapieznik()) {
         return true;

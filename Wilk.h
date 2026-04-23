@@ -10,7 +10,6 @@ protected:
 public:
     Wilk(int PolozenieX, int PolozenieY, Swiat* swiat);
     void Rysuj() const override;
-    bool CzyObronil(Organizm *napastnik) override;
     bool CzyDrapieznik() override;
 };
 

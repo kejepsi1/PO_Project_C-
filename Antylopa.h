@@ -10,7 +10,6 @@ public:
     void Rysuj() const override;
     void Akcja() override;
     void Kolizja() override;
-    bool CzyObronil(Organizm *napastnik) override;
     bool CzyOdpycha(Organizm *napastnik) override;
 };
 

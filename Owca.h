@@ -9,7 +9,6 @@ protected:
 public:
     Owca(int PolozenieX, int PolozenieY, Swiat* swiat);
     void Rysuj() const override;
-    bool CzyObronil(Organizm *napastnik) override;
 };
 
 

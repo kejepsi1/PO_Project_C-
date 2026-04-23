@@ -12,13 +12,6 @@ void Wilk::Rysuj() const {
     swiat->NarysujOrganizm(PolozenieX,PolozenieY, ZNAK_WILKA);
 }
 
-bool Wilk::CzyObronil(Organizm *napastnik) {
-    if (napastnik->GetSila() >= this->GetSila()) {
-        return false;
-    }
-    return true;
-}
-
 Organizm *Wilk::Rozmnazaj(int x, int y) {
     return new Wilk(x,y,swiat);
 }

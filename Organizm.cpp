@@ -142,6 +142,13 @@ bool Organizm::UniknijSmierci(Organizm *napastnik) {
     return false;
 }
 
+bool Organizm::CzyObronil(Organizm* napastnik) {
+    if (napastnik->GetSila() >= this->GetSila()) {
+        return false;
+    }
+    return true;
+}
+
 std::string Organizm::DoZapisu() {
     return std::string(1, znak) + " " + std::to_string(PolozenieX) + " " + std::to_string(PolozenieY) + " " + std::to_string(sila) + " " + std::to_string(wiek);
 }

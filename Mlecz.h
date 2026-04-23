@@ -8,7 +8,6 @@ public:
     Mlecz(int PolozenieX, int PolozenieY, Swiat* swiat);
     void Rysuj() const override;
     void Akcja() override;
-    bool CzyObronil(Organizm *napastnik) override;
     bool CzyMoznaZdeptac(Organizm *napastnik) override;
 };
 

@@ -135,13 +135,6 @@ bool Antylopa::CzyOdpycha(Organizm *napastnik) {
     return false;
 }
 
-bool Antylopa::CzyObronil(Organizm *napastnik) {
-    if (napastnik->GetSila() >= this->GetSila()) {
-        return false;
-    }
-    return true;
-}
-
 Organizm *Antylopa::Rozmnazaj(int x, int y) {
     return new Antylopa(x,y,swiat);
 }

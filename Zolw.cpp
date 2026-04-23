@@ -75,12 +75,6 @@ bool Zolw::CzyOdpycha(Organizm *napastnik) {
     return false;
 }
 
-bool Zolw::CzyObronil(Organizm *napastnik) {
-    if (napastnik->GetSila() >= this->GetSila()) {
-        return false;
-    }
-    return true;
-}
 Organizm* Zolw::Rozmnazaj(int x,int y) {
     return new Zolw(x,y,swiat);
 }

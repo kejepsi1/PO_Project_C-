@@ -34,7 +34,7 @@ public:
     void Zabij();
     virtual void Akcja();
     virtual void Kolizja();
-    virtual bool CzyObronil(Organizm* napastnik) = 0;
+    virtual bool CzyObronil(Organizm* napastnik);
     virtual ~Organizm();
     virtual bool CzyOdpycha(Organizm* napastnik);
     virtual void Cofnij();

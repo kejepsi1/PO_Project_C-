@@ -50,13 +50,6 @@ bool Lis::DobryWech(int x, int y) {
     return true;
 }
 
-bool Lis::CzyObronil(Organizm *napastnik) {
-    if (napastnik->GetSila() >= this->GetSila()) {
-        return false;
-    }
-    return true;
-}
-
 Organizm *Lis::Rozmnazaj(int x, int y) {
     return new Lis(x,y,swiat);
 }

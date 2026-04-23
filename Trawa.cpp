@@ -41,13 +41,6 @@ void Trawa::Akcja() {
     }
 }
 
-bool Trawa::CzyObronil(Organizm *napastnik) {
-    if (napastnik->GetSila() >= this->GetSila()) {
-        return false;
-    }
-    return true;
-}
-
 bool Trawa::CzyMoznaZdeptac(Organizm* napastnik) {
     if (napastnik->CzyDrapieznik()) {
         return true;

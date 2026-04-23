@@ -10,7 +10,6 @@ public:
     Czlowiek(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat* swiat);
     void Rysuj() const override;
     void Akcja() override;
-    bool CzyObronil(Organizm *napastnik) override;
     bool CzyDrapieznik() override;
     std::string DoZapisu() override;
     void SetCzasOdnowienia(int czas);

@@ -14,13 +14,6 @@ void Owca::Rysuj() const {
     swiat->NarysujOrganizm(PolozenieX,PolozenieY, ZNAK_OWCY);
 }
 
-bool Owca::CzyObronil(Organizm *napastnik) {
-    if (napastnik->GetSila() >= this->GetSila()) {
-        return false;
-    }
-    return true;
-}
-
 Organizm *Owca::Rozmnazaj(int x, int y) {
     return new Owca(x,y,swiat);
 }
