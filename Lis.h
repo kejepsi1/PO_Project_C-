@@ -4,13 +4,14 @@
 
 
 class Lis : public Zwierze {
+protected:
+    Organizm* Rozmnazaj(int x, int y) override;
 public:
     Lis(int PolozenieX, int PolozenieY, Swiat* swiat);
     void Rysuj() const override;
     void Akcja() override;
     bool DobryWech(int x, int y);
     bool CzyObronil(Organizm *napastnik) override;
-    Organizm* Rozmnazaj(int x, int y) override;
     bool CzyDrapieznik() override;
 };
 

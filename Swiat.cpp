@@ -270,6 +270,14 @@ void Swiat::WczytajSwiat() {
     DodajKomunikat("Gra zostala wczytana pomyslnie");
 }
 
+void Swiat::SetCzyWczytac(bool stan) {
+    czyWczytac = stan;
+}
+
+const std::vector<Organizm *> &Swiat::GetOrganizmy() const {
+        return organizmy;
+}
+
 Swiat::~Swiat() {
     for (int i=0;i<organizmy.size();i++) {
         delete organizmy[i];

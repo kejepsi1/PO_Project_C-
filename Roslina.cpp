@@ -9,8 +9,8 @@ void Roslina::Kolizja() {
 }
 
 bool Roslina::SprawdzajSasiadow(int x, int y) {
-    for (int i=0;i<swiat->organizmy.size();i++) {
-        if (swiat->organizmy[i]->CzyZyje() && x == swiat->organizmy[i]->GetPolozenieX() && y == swiat->organizmy[i]->GetPolozenieY()) {
+    for (int i=0;i<swiat->GetOrganizmy().size();i++) {
+        if (swiat->GetOrganizmy()[i]->CzyZyje() && x == swiat->GetOrganizmy()[i]->GetPolozenieX() && y == swiat->GetOrganizmy()[i]->GetPolozenieY()) {
             return false;
         }
     }

@@ -65,7 +65,7 @@ void Czlowiek::Akcja() {
             swiat->ZapiszSwiat();
             break;
         case 'l':
-            swiat->czyWczytac = true;
+            swiat->SetCzyWczytac(true);
             break;
         case 'q':
             endwin();
@@ -95,8 +95,8 @@ bool Czlowiek::UniknijSmierci(Organizm *napastnik) {
             int potencjalneY = PolozenieY + mozliweY[j];
             bool found = false;
             if (potencjalneX >= 0 && potencjalneX < swiat->GetX() && potencjalneY >=0 && potencjalneY < swiat->GetY()) {
-                for (int i=0; i<swiat->organizmy.size(); i++) {
-                    if (swiat->organizmy[i]->GetPolozenieX() == potencjalneX && swiat->organizmy[i]->GetPolozenieY() == potencjalneY) {
+                for (int i=0; i<swiat->GetOrganizmy().size(); i++) {
+                    if (swiat->GetOrganizmy()[i]->GetPolozenieX() == potencjalneX && swiat->GetOrganizmy()[i]->GetPolozenieY() == potencjalneY) {
                         found = true;
                         break;
                     }

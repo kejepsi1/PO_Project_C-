@@ -27,8 +27,8 @@ void BarszczSosnowskiego::Akcja() {
         int potencjalneX = PolozenieX + mozliweX[j];
         int potencjalneY = PolozenieY + mozliweY[j];
 
-        for (int i = 0; i < swiat->organizmy.size(); i++) {
-            Organizm* sasiad = swiat->organizmy[i];
+        for (int i = 0; i < swiat->GetOrganizmy().size(); i++) {
+            Organizm* sasiad = swiat->GetOrganizmy()[i];
 
             if (sasiad->GetPolozenieX() == potencjalneX && sasiad->GetPolozenieY() == potencjalneY) {
                 if (sasiad->CzyZyje() && dynamic_cast<Zwierze*>(sasiad) != nullptr) {
@@ -48,7 +48,7 @@ void BarszczSosnowskiego::Akcja() {
         int mozliweX[] = {-1,1,0,0,-1,-1,1,1};
         int mozliweY[] = {0,0,-1,1,-1,1,-1,1};
         std::vector<int> bezpieczne;
-        for (int i=0;i < 8;i++) {
+        for (int i = 0;i < 8;i++) {
             int potencjalneX = PolozenieX + mozliweX[i];
             int potencjalneY = PolozenieY + mozliweY[i];
 
@@ -67,11 +67,9 @@ void BarszczSosnowskiego::Akcja() {
     }
 }
 
-
-
 bool BarszczSosnowskiego::SprawdzajSasiadow(int x, int y) {
-    for (int i=0;i<swiat->organizmy.size();i++) {
-        if (x == swiat->organizmy[i]->GetPolozenieX() && y == swiat->organizmy[i]->GetPolozenieY()) {
+    for (int i=0;i<swiat->GetOrganizmy().size();i++) {
+        if (x == swiat->GetOrganizmy()[i]->GetPolozenieX() && y == swiat->GetOrganizmy()[i]->GetPolozenieY()) {
             return false;
         }
     }

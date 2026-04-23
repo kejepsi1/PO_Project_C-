@@ -19,8 +19,8 @@ void Zwierze::RozmnozSie() {
         int potencjalneY = PolozenieY + mozliweY[j];
         if (potencjalneX >= 0 && potencjalneX < swiat->GetX() && potencjalneY >= 0 && potencjalneY < swiat->GetY()) {
             bool zajete = false;
-            for (int i = 0; i < swiat->organizmy.size(); i++) {
-                if (swiat->organizmy[i]->CzyZyje() && swiat->organizmy[i]->GetPolozenieX() == potencjalneX && swiat->organizmy[i]->GetPolozenieY() == potencjalneY) {
+            for (int i = 0; i < swiat->GetOrganizmy().size(); i++) {
+                if (swiat->GetOrganizmy()[i]->CzyZyje() && swiat->GetOrganizmy()[i]->GetPolozenieX() == potencjalneX && swiat->GetOrganizmy()[i]->GetPolozenieY() == potencjalneY) {
                     zajete = true;
                     break;
                 }

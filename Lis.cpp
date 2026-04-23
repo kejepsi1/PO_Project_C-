@@ -40,9 +40,9 @@ void Lis::Akcja() {
 }
 
 bool Lis::DobryWech(int x, int y) {
-    for (int i=0;i<swiat->organizmy.size();i++) {
-        if (x == swiat->organizmy[i]->GetPolozenieX() && y == swiat->organizmy[i]->GetPolozenieY()) {
-            if (swiat->organizmy[i]->CzyZyje() && sila < swiat->organizmy[i]->GetSila()) {
+    for (int i=0;i<swiat->GetOrganizmy().size();i++) {
+        if (x == swiat->GetOrganizmy()[i]->GetPolozenieX() && y == swiat->GetOrganizmy()[i]->GetPolozenieY()) {
+            if (swiat->GetOrganizmy()[i]->CzyZyje() && sila < swiat->GetOrganizmy()[i]->GetSila()) {
                 return false;
             }
         }

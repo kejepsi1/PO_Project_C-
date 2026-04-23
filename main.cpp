@@ -1,4 +1,4 @@
-fi#include <iostream>
+#include <iostream>
 #include <ctime>
 #include "Swiat.h"
 #include "Czlowiek.h"

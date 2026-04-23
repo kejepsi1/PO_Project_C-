@@ -8,10 +8,14 @@
 class Swiat {
 private:
     int x,y;
-public:
     std::vector<Organizm*> organizmy;
     std::vector<std::string> komunikaty;
     bool czyWczytac = false;
+    void DodajWiek();
+    void WczytajSwiat();
+public:
+    const std::vector<Organizm*>& GetOrganizmy() const;
+    void SetCzyWczytac(bool stan);
     Swiat(int x, int y);
     ~Swiat();
     void SetX(int x);
@@ -25,10 +29,8 @@ public:
     void WykonajTure();
     void Graj();
     void SprawdzajKolizje(Organizm* organizm);
-    void DodajWiek();
     void DodajKomunikat(std::string komunikat);
     void ZapiszSwiat();
-    void WczytajSwiat();
 };
 
 

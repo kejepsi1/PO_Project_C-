@@ -16,6 +16,7 @@ protected:
     Swiat* swiat;
     int wiek;
     bool czyZyje = true;
+    virtual Organizm* Rozmnazaj(int x,int y);
 public:
     Organizm(int sila, int inicjatywa, int PolozenieX, int PolozenieY, Swiat* swiat, char znak);
     virtual void Rysuj() const = 0;
@@ -37,7 +38,6 @@ public:
     virtual ~Organizm();
     virtual bool CzyOdpycha(Organizm* napastnik);
     virtual void Cofnij();
-    virtual Organizm* Rozmnazaj(int x,int y);
     virtual void RozmnozSie();
     virtual bool CzyMoznaZdeptac(Organizm* napastnik);
     virtual bool CzyDrapieznik();
